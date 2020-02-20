@@ -1,0 +1,90 @@
+<!-- Define document type -->
+<!DOCTYPE html>
+<html>
+
+<!-- Define head -->
+<head>
+<link rel="stylesheet" type="text/css" href="styleHTML.css">
+</head>
+
+<!-- Define and apply style to body -->
+<style>
+body {
+  background-color: black;
+  text-align: center; 
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+
+<!-- Form validation -->
+<script>
+function validateForm() {
+var a = document.forms["javaForm"]["firstName"].value;
+var b = document.forms["javaForm"]["lastName"].value;
+var c = document.forms["javaForm"]["email"].value;
+
+<!-- In case a, b, and c are empty, display this message -->
+if (a == "" || b == "" || c == "") {
+alert("Please, complete all sections.");
+return false;
+}
+
+<!-- In case a does not include "@", display this message -->
+else if (!(c.includes("@"))) {
+alert("Please, enter a valid email address.");
+return false;
+}
+
+<!-- Otherwise, display this message -->
+else {
+alert("Thank you for your submission. Have a great day!");
+}
+}
+</script>
+
+<!-- Start body -->
+<body>
+<!--
+This is the title. Properties used in the title:
+Text alignment: center
+Text style: bold (strong), italics (em)
+Header type: h3
+-->
+<h3 style="text-align: center;" align="center"><em>Customer Information</em></h3>
+
+<!-- Start form -->
+<form name="javaForm">
+
+<!-- Create text “First name:” text then skip a line -->
+First name:<br>
+
+<!-- Create input box then skip 2 lines -->
+<input name="firstName" type="text" /><br><br>
+
+<!-- Create text “Last name:” text then skip a line -->
+Last name:<br>
+
+<!-- Create input box then skip 2 lines -->
+<input name="lastName" type="text" /><br><br>
+
+<!-- Create text “E-mail:” text then skip a line -->
+E-mail:<br> 
+
+<!-- Create input box then skip two lines -->
+<input name="email" type="text" /><br><br>
+
+<!-- Create submit button. Once clicked, a call function -->
+<button type="button" onclick="return validateForm()">Submit</button>
+
+<!-- Create reset button. Once clicked, information will be deleted and a confirmation message will be displayed -->
+<input class="button" type="reset" value="Reset" onclick="alert('Your information has been deleted.')" />
+
+<!-- End form -->
+</form>
+
+<!-- End body -->
+</body>
+
+<!-- End html -->
+</html>
